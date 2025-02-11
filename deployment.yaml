@@ -73,6 +73,10 @@ Parameters:
     Type: Number
     Default: 50
     Description: Size in GiB of EBS root volume
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ecs/optimized-ami/amazon-linux-2023/neuron/recommended/image_id'
+    Description: The latest ECS Neuron AMI
 
 Resources:
   BatchLaunchTemplate:
@@ -170,7 +174,7 @@ Resources:
           Name: "Inference-demo-batch"
         Ec2Configuration:
           - ImageType: ECS_AL2023
-            ImageIdOverride: ami-07979ad4c774a29ab
+            ImageIdOverride: !Ref LatestAmiId
 
   DefaultQueue:
     Type: AWS::Batch::JobQueue
