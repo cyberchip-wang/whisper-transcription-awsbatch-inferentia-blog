@@ -7,12 +7,17 @@ For customers seeking to host the Whisper model on AWS but do not need real-time
 ## Highlights of What’s New in Version v2.0.0
 
 ### Performance Improvements
+
 1.1 Preloaded model files into container image to eliminate download time during execution
+
 1.2 Added projection layer optimization resulting in 30% performance improvement
+
 1.3 Reduced Batch job resource requirements and Neuron core number to enable 2 concurrent jobs per inf2 chip on the same instance
 
 ### Additional Updates
+
 2.1 Updated to dynamically retrieve the latest ECS Neuron AMI for Batch compute environment provisioning
+
 2.2 Updated Dockerfile with new base image configuration
 
 ## Deploy the solution
